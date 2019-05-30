@@ -1,0 +1,203 @@
+ul{
+    list-style: none;
+    margin: 0
+}
+.checkbox_list input[type=checkbox]{
+    vertical-align: top;
+}
+.span2{
+    width: auto;
+}
+.error-message{
+    color: red;
+}
+.login-left img{
+    width: 294px;
+    height: 294px;
+}
+#formAddCommission{
+    overflow: hidden;
+}
+.form-field{
+    float: left;
+    margin-right: 10px;
+    width: 180px;
+}
+.inpField{
+    width: 170px;
+}
+.txt-center{
+    text-align: center;
+}
+.txtAddMultiSim,.txtDeleteMultiSim{
+    width: 500px;
+    height: 400px;
+}
+.checkbox_list li.filterMultiCheckbox:last-child{
+    margin-bottom: 10px;
+}
+.checkbox_list li.filterMultiCheckbox label,.formContentMultiSim .checkbox_list li label{
+    display: inline;
+}
+
+.order-info-field{
+    overflow: hidden;
+    line-height: 30px;
+}
+.order-info-label{
+    width: 15%; float: left; font-weight: bold;
+}
+.order-info-content{
+    float: left; width: 70%;
+}
+
+#formUpdateOrder .radio_list,.formContentMultiSim .radio_list{
+    overflow: hidden;
+}
+#formUpdateOrder .radio_list li{
+    display: inline-block;
+    margin-right: 20px;
+}
+#formUpdateOrder .radio_list li:last-child{
+    margin-right: 0;
+}
+#formUpdateOrder .radio_list li label,.formContentMultiSim .radio_list li label{
+    display: inline;
+    vertical-align: middle;
+}
+#formUpdateOrder .radio_list li input,.formContentMultiSim .radio_list li input{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.setting-group{
+    float: left;
+}.setting-group:nth-child(even){
+    float: right;
+}
+.setting-group .table{
+    margin-bottom: 0;
+}
+.setting-group .table td{
+    border-top: none;
+    vertical-align: middle;
+}
+.setting-group .table td:first-child:not(.no-results){
+    width: 115px;
+}
+.setting-group .table td:last-child:not(.no-results){
+    width: 100px;
+    text-align: right;
+}
+.setting-group .table .no-results{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.setting-group-head{
+    overflow: hidden;
+}
+.setting-group-title{
+    float: left;
+}
+.setting-group-btnNew{
+    float: right;
+}
+.inpSetting{
+    width: 100%;
+    margin-bottom: 0;
+}
+.txtaSetting{
+    width: 100%;
+}
+ol.sortable, ol.sortable ol{
+    list-style-type: none;
+}
+.sortable li{
+    margin: 5px 0 0;
+}
+.sortable li div {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%) repeat scroll 0 0;
+    border-color: #d4d4d4 #d4d4d4 #bcbcbc;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: move;
+    margin: 0;
+    padding: 6px;
+}
+.listitem{
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #ffffff 0%, #f6f6f6 47%, #f0ece9 100%) repeat scroll 0 0;
+
+}
+.placeholder {
+    outline: 1px dashed #4183c4;
+}
+.disclose{
+    cursor: pointer
+}
+.sortable li.menu-expanded > div > .disclose > span::before{
+    content: "- ";
+}
+.sortable li.menu-collapsed > div > .disclose > span::before{
+    content: "+ ";
+}
+.sortable li.menu-collapsed > ol{
+    display: none
+}
+.fakePlaceholder{
+    color: #aaa
+}
+
+.formRight{
+    padding-left: 60px;
+}
+.formRight .form-title{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.formContentMultiSim .form-control{
+    margin-bottom: 15px
+}
+.formContentMultiSim ul li{
+    margin-bottom: 5px;
+}
+.formContentMultiSim input[type=submit]{
+    width: 210px; height: 40px; font-size: 20px;
+}
+.formContentMultiSim ul li label{
+    font-size: 14px
+}
+.formContentMultiSim ul li .help{
+    font-size: 12px;
+    font-style: italic;
+}
+.formPromotion label{
+    display: inline-block;
+    width: 75px;
+    vertical-align: top;
+    margin-top: 5px
+}
+
+.text-error{
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: red;
+}
+.text-warning{
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    color: #8a6d3b;
+}
+.sf_admin_form_field_price_format input[type=radio]{
+    vertical-align: top;
+}
+
+.previewing{
+    width: 50px
+}

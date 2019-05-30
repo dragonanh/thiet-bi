@@ -1,0 +1,37 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           Article
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          article
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        sort: [created_at, desc]
+        title: Quản lý tin tức
+        display: [order_no, =title, _image_path, status_name, group_name, meta_title, meta_keyword, meta_description]
+        object_actions:
+          _edit: ~
+          _delete: ~
+        fields:
+          order_no: {label: STT}
+          title: {label: Tiêu đề}
+          image_path: {label: Ảnh đại diện}
+          status_name: {label: Trạng thái}
+          group_name: {label: Nhóm tin}
+          created_at: {label: Ngày tạo}
+      filter:
+        class: ArticleAdminFormFilter
+        display: [title, status, group_id]
+      form:
+        class: ArticleAdminForm
+      edit:    ~
+      new:     ~

@@ -1,0 +1,56 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  i18n_catelog: amin
+  param:
+    model_class:           sfGuardUser
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_user
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   admin/sfGuardUser
+
+    config:
+      actions: 
+        _list: 
+        _save: 
+        _delete:
+        _edit:  
+      list:
+        sort: [created_at, desc]
+        max_per_page: 20
+        title: Management account
+        display: [order_no, =username, phone, email_address, is_active, last_login, created_at]
+        fields:
+          order_no: {label: STT}
+          is_active: {label: Active}
+          phone: {label: Số điện thoại}
+        actions:
+          _new:       {label: New}
+        object_actions:
+          _edit: ~
+          _delete: ~
+        batch_actions:
+          deactive:   {label: Deactive}
+          active:     {label: Active}
+
+      filter:
+        class: sfGuardUserCustomAdminFormFilter
+      form:
+        class: sfGuardUserCustomAdminForm
+      edit:
+        title: Edit account
+        actions:
+          _list: ~
+          _save: ~
+          _save_and_exit: {label: Lưu và quay lại danh sách}
+            
+      new:
+        title: New account
+        actions:
+          _list: ~
+          _save: ~
+          _save_and_add: ~

@@ -1,0 +1,109 @@
+product:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Product
+    module:               managerProduct
+    prefix_path:          /managerProduct
+    column:               id
+    with_wildcard_routes: true
+
+category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Category
+    module:               managerCategory
+    prefix_path:          /managerCategory
+    column:               id
+    with_wildcard_routes: true
+
+article_group:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ArticleGroup
+    module:               articleGroup
+    prefix_path:          /articleGroup
+    column:               id
+    with_wildcard_routes: true
+
+article:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Article
+    module:               article
+    prefix_path:          /article
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+########################### AJAX ###########################
+
+########################### AJAX ###########################
+# default rules
+homepage:
+  url:   /
+  param: { module: vtHomePage, action: index }
+
+#module rule
+sf_guard_change_password:
+  url:   /guard/change_password
+  param: { module: sfGuardAuth, action: changePassword }
+
+sf_guard_group:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardGroup
+    module:               sfGuardGroup
+    prefix_path:          /sfGuardGroup
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               sfGuardUser
+    prefix_path:          /sfGuardUser
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_group:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardGroup
+    module:               sfGuardGroup
+    prefix_path:          /sfGuardGroup
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_permission:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardPermission
+    module:               sfGuardPermission
+    prefix_path:          /sfGuardPermission
+    column:               id
+    with_wildcard_routes: true
+
+
+
+# generic rules
+error404:
+  url: /page-not-found
+  param: { module: default, action: error404 }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

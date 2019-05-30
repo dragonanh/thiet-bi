@@ -1,0 +1,8 @@
+all:
+  connections:
+    default:
+      host: localhost
+      port: 6379
+      database: 1
+      connection_timeout: 5
+      read_write_timeout: 30

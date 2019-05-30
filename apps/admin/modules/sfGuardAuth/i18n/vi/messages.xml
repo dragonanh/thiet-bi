@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="vi" datatype="plaintext" original="messages" date="2013-09-30T04:15:30Z" product-name="messages">
+    <header/>
+    <body>
+        <trans-unit>
+            <source>Password Old *</source>
+            <target>Mật khẩu cũ *</target>
+        </trans-unit>
+        <trans-unit>
+            <source>New Password *</source>
+            <target>Mật khẩu mới *</target>
+        </trans-unit>
+        <trans-unit>
+            <source>Repeat Password *</source>
+            <target>Nhập lại mật khẩu mới *</target>
+        </trans-unit>
+    </body>
+  </file>
+</xliff>

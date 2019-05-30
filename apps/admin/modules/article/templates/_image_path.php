@@ -1,0 +1,1 @@
+<img src="<?php echo $article->getImagePath()?>" style="width: 100px"/>

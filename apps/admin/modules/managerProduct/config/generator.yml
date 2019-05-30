@@ -1,0 +1,35 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           Product
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          product
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        object_actions:
+          _edit: ~
+          _delete: ~
+        display: [order_no,=name,image_path,description,status,priority]
+        title: Quản lý sản phẩm
+        fields:
+          name: {label: Tên sản phẩm}
+          status: {label: Trạng thái}
+      filter:
+        class: ProductAdminFormFilter
+      form:
+        class: ProductAdminForm
+      edit:
+        title: Chỉnh sửa sản phẩm
+      new:
+        title: Thêm mới sản phẩm
+      show:    ~
+      revert:  ~

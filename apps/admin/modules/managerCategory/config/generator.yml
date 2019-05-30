@@ -1,0 +1,35 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           Category
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          category
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        object_actions:
+          _edit: ~
+          _delete: ~
+        display: [order_no,=name,description,is_active,priority]
+        title: Quản lý danh mục sản phẩm
+        fields:
+          name: {label: Tên danh mục}
+          is_active: {label: Trạng thái}
+      filter:
+        class: CategoryAdminFormFilter
+      form:
+        class: CategoryAdminForm
+      edit:
+        title: Chỉnh sửa danh mục sản phẩm
+      new:
+        title: Thêm mới danh mục sản phẩm
+      show:    ~
+      revert:  ~

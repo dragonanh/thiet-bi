@@ -1,0 +1,54 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+#all:
+all:
+  ckeditor:
+    basePath:  '/js/ckeditor/'
+  truncate_length: 50  ## Gia tri truncate length khi xau ky tu qua dai
+  server_path: http://localhost:8090
+  upload_images: '/uploads/images/'
+  max_image_upload: 2 #MB
+  # sfCKEditorPlugin
+
+  #tim kiem voi ky tu dac biet
+  .array:
+    search_special_char:
+      "%":  "\%"
+      "'":  "\'"
+      "_": "\_"
+      "&": "\&"
+    copyright_mime_type: ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.openxmlformats-officedocument.wordprocessingml.template', 'application/vnd.ms-word.document.macroEnabled.12', 'application/vnd.ms-word.template.macroEnabled.12', 'application/pdf']
+  tmcTwitterBootstrapPlugin:
+    bootstrap_path:              /tmcTwitterBootstrapPlugin/css/bootstrap.min.css
+    responsive_bootstrap_path:   /tmcTwitterBootstrapPlugin/css/bootstrap-responsive.min.css
+    admin_styles_path:           /tmcTwitterBootstrapPlugin/css/styles.css
+    jquery_path:                 /tmcTwitterBootstrapPlugin/js/jquery.min.js
+    bootstrap_js_path:           /tmcTwitterBootstrapPlugin/js/bootstrap.min.js
+    admin_js_path:               /tmcTwitterBootstrapPlugin/js/global.js
+    dashboard_name: Quản trị
+
+    header:
+      menu:
+        Tài khoản:
+          credentials: [[admin]]
+          route: sf_guard_user
+        Nội dung:
+          credentials: [[admin,manager]]
+          dropdown:
+            Quản lý tin tức:
+              credentials: [[admin,manager]]
+              route: article
+            Quản lý nhóm tin:
+              credentials: [[admin,manager]]
+              route: article_group
+        Sản phẩm:
+          credentials: [[admin,manager]]
+          dropdown:
+            Quản lý danh mục sản phẩm:
+              credentials: [[admin,manager]]
+              route: category
+            Quản lý sản phẩm:
+              credentials: [[admin,manager]]
+              route: product

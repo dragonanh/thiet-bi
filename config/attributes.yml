@@ -1,0 +1,4 @@
+sim_attr:
+  sale:    {value: 1, alias: "Sim khuyến mại"}
+  priority:    {value: 2, alias: "Sim ưu tiên"}
+

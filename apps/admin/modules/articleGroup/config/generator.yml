@@ -1,0 +1,38 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           ArticleGroup
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          article_group
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Quản lý nhóm tin
+        display: [order_no, =name, description, is_active, list_position_name, created_at]
+        object_actions:
+          _edit: ~
+          _delete: ~
+        fields:
+          order_no: {label: STT}
+          name: {label: Tên nhóm}
+          description: {label: Mô tả}
+          is_active: {label: Trạng thái}
+          list_position_name: {label: Vị trí hiển thị}
+          created_at: {label: Ngày tạo}
+      filter:
+        class: ArticleGroupAdminFormFilter
+        display: [name,is_active,position]
+      form:
+        class: ArticleGroupAdminForm
+      edit:
+        title: Chỉnh sửa nhóm tin
+      new:
+        title: Thêm mới nhóm tin

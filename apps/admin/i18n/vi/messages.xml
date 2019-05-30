@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="vi" datatype="plaintext" original="messages" date="2013-09-30T04:15:30Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>Required.</source>
+        <target>Bắt buộc</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was created successfully.</source>
+        <target>Bản ghi đã được thêm mới thành công.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item was updated successfully.</source>
+        <target>Bản ghi đã được cập nhật thành công.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The selected items have been deleted successfully.</source>
+        <target>Các bản ghi đã được xóa thành công.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>The item has not been saved due to some errors.</source>
+        <target>Lưu bản ghi thất bại.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Active</source>
+        <target>Kích hoạt</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Deactive</source>
+        <target>Hủy kích hoạt</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Pause</source>
+        <target>Tạm dừng</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Order no</source>
+        <target>STT</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Description</source>
+        <target>Mô tả</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Priority</source>
+        <target>Độ ưu tiên</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

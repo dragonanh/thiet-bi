@@ -1,0 +1,55 @@
+.cate-title{
+    margin-bottom: 10px;
+    line-height: 40px;
+}
+
+.cate-title .title-name{
+    font-size: 25px;
+    text-decoration: none;
+    color: #5b5b5b;
+}
+
+.sidebar .tab-content{
+    border-top: 4px solid #ddd;
+}
+
+#popularPosts .heading-primary{
+    color: #5b5b5b !important;
+}
+#popularPosts hr{
+    margin: 10px 0
+}
+
+.shop ul.simple-post-list li{
+    border-bottom: 1px dotted #e2e2e2;
+}
+ul.simple-post-list li:last-child{
+    border-bottom: 0 none;
+}
+
+.product-thumb-info .product-thumb-info-image{
+    padding: 5px
+}
+.product-thumb-info .product-thumb-info-image img{
+    height: 180px
+}
+
+.simple-post-list .post-info a{
+    color: #383f48
+}
+.post .post-content .post-title{
+    font-size: 25px;
+}
+.product-thumb-info .product-thumb-info-content .product-title{
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: normal;
+    line-height: 18px;
+    margin: 0 0 14px 0;
+    text-transform: uppercase;
+    color: #383f48;
+    height: 36px;
+}
+.nivo-slider .theme-default .nivoSlider img, .nivo-slider .theme-default .nivoSlider{
+    border-radius: 0;
+}
