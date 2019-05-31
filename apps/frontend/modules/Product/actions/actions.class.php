@@ -23,6 +23,34 @@ class ProductActions extends sfActions
       if($product) {
         $this->product = $product;
         $this->getResponse()->addMeta('title', $product->getName());
+
+        $viewedProduct = [
+          'name' => $product->getName(),
+          'slug' => $product->getSlug(),
+          'image_path' => $product->getImagePath(),
+          'price' => $product->getPrice(),
+          'old_price' => $product->getOldPrice()
+        ];
+        $cookie_name = "ProductRecentlyViewed";
+        $listRecentlyViewed = [];
+        //lay danh sach san pham da xem
+        if(isset($_COOKIE[$cookie_name])){
+          $listRecentlyViewed = json_decode($_COOKIE[$cookie_name], true);
+          foreach ($listRecentlyViewed as $key => $recently){
+            if($recently['slug'] == $viewedProduct['slug']){
+              unset($listRecentlyViewed[$key]);
+            }
+          }
+
+          //remove last product if list greater than 20 product
+          if(count($listRecentlyViewed) > 20) array_pop($listRecentlyViewed);
+        }
+
+        //them san pham hien tai vao dau danh sach
+        array_unshift($listRecentlyViewed, $viewedProduct);
+
+        //luu thong tin san pham moi xem vao cookie
+        setcookie($cookie_name, json_encode($listRecentlyViewed), time() + (86400 * 365 * 10), "/"); // 86400 = 1 day
       }else
         $this->forward404();
     }else{

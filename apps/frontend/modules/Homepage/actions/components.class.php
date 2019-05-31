@@ -28,7 +28,8 @@ class HomepageComponents extends sfComponents
   }
 
   public function executeRecentlyViewed(){
-
+    $cookie_name = "ProductRecentlyViewed";
+    $this->listProduct = isset($_COOKIE[$cookie_name]) ? json_decode($_COOKIE[$cookie_name], true) : [];
   }
   
 }

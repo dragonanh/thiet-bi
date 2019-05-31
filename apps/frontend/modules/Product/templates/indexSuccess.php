@@ -44,11 +44,11 @@
                                         <p class="price">
                                             <?php if($product->getOldPrice() && $product->getOldPrice() > $product->getPrice()): ?>
                                                 <del>
-                                                   <span class="woocommerce-Price-amount amount"><?php echo VtHelper::formatNumber($product->getOldPrice()) ?>VNĐ</span>
+                                                   <span class="woocommerce-Price-amount amount"><?php echo VtHelper::formatNumber($product->getOldPrice()) ?> đ</span>
                                                 </del>
                                             <?php endif  ?>
                                             <ins>
-                                               <span class="woocommerce-Price-amount amount"><?php echo VtHelper::formatNumber($product->getPrice()) ?>VNĐ</span>
+                                               <span class="woocommerce-Price-amount amount"><?php echo VtHelper::formatNumber($product->getPrice()) ?> đ</span>
                                             </ins>
                                         </p>
                                         <!-- .single-product-header -->
@@ -58,7 +58,7 @@
                                                 <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" id="quantity-input">
                                             </div>
                                             <!-- .quantity -->
-                                            <button class="single_add_to_cart_button button alt" value="185" name="add-to-cart" type="submit">Add to cart</button>
+                                            <button class="single_add_to_cart_button button alt" value="185" name="add-to-cart" type="submit"><?php echo __('Thêm vào giỏ hàng') ?></button>
                                         </form>
                                         <!-- .cart -->
                                     </div>

@@ -70,4 +70,10 @@ class ProductTable extends Doctrine_Table
       }
       return $query;
     }
+
+    public static function getProductById($productId){
+      return self::getListProductActiveQuery()
+        ->andWhere('id = ?', $productId)
+        ->fetchOne();
+    }
 }

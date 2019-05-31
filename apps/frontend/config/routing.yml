@@ -13,9 +13,17 @@ detail_article:
 search_product:
   url: /tim-kiem
   param: { module: vtPageSearch, action: index}
+cart:
+  url: /gio-hang
+  param: { module: Cart, action: index}
+checkout:
+  url: /thanh-toan
+  param: { module: Cart, action: checkout}
 
 ####################################### AJAX ########################################
-
+ajax_add_to_cart:
+  url: /ajax/them-vao-gio-hang/:id
+  param: { module: Cart, action: ajaxAddToCart}
 ####################################### END AJAX ####################################
 
 homepage:

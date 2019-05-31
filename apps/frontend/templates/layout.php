@@ -22,6 +22,7 @@
       <?php include_partial('Common/footer')?>
     </div>
     <?php include_javascripts() ?>
+    <script type="text/javascript" src="/js/frontend/cart.js"></script>
     <script type="text/javascript" src="/js/custom.js"></script>
   </body>
 </html>

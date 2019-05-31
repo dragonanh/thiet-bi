@@ -25,7 +25,7 @@ default:
     - /assets/css/animate.min.css: { media: all }
     - /assets/css/style.css: { media: all }
     - /assets/css/colors/red.css: { media: all }
-    - "https://fonts.googleapis.com/css?family=Rubik:300,400,500,900"
+    - /assets/css/roboto.css: { media: all }
 
   javascripts:
     - /assets/js/jquery.min.js
