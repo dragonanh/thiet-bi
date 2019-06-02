@@ -23,7 +23,7 @@ default:
     - /assets/css/techmarket-font-awesome.css: { media: all }
     - /assets/css/slick-style.css: { media: all }
     - /assets/css/animate.min.css: { media: all }
-    - /assets/css/style.css: { media: all }
+    - /assets/css/style.css?v=1: { media: all }
     - /assets/css/colors/red.css: { media: all }
     - /assets/css/roboto.css: { media: all }
 

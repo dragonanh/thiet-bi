@@ -13,10 +13,11 @@
     <link rel="alternate" href="<?php echo url_for('homepage', array(), true)?>" hreflang="vi-vn" />
 
     <?php include_stylesheets() ?>
-    <link href="/css/frontend/coder_update.css" media="screen" type="text/css" rel="stylesheet"/>
+    <link href="/css/frontend/coder_update.css?v=1.4" media="all" type="text/css" rel="stylesheet"/>
   </head>
   <body class="<?php echo get_slot('body_class') ?>">
     <div id="page" class="hfeed site">
+      <?php include_partial('Common/contactTop') ?>
       <?php include_component('Common','header')?>
       <?php echo $sf_content ?>
       <?php include_partial('Common/footer')?>

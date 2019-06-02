@@ -5,58 +5,51 @@ class sfWidgetFormCKEditor extends sfWidgetFormTextarea {
   protected $_editor;
   protected $_finder;
   
-  protected function configure($options = array(), $attributes = array())
-  {
-    $editorClass = 'CKEditor';
-	  if (!class_exists($editorClass))
-	  {
-   	  throw new sfConfigurationException(sprintf('CKEditor class not found'));    
-	  }
-    $this->_editor = new $editorClass();
-    $this->_editor->basePath = sfConfig::get('app_ckeditor_basePath');
-    $this->_editor->returnOutput = true;
-    if(sfConfig::get('app_ckfinder_active', false) == 'true')
-    {
-      $finderClass = 'CKFinder';
-  	  if (!class_exists($finderClass))
-  	  {
-     	  throw new sfConfigurationException(sprintf('CKFinder class not found'));
-  	  }
-      $this->_finder = new $finderClass();
-      $this->_finder->BasePath = sfConfig::get('app_ckfinder_basePath');
-      $this->_finder->SetupCKEditorObject($this->_editor);
-    }
-    if(isset($options['jsoptions']))
-    {
-      $this->addOption('jsoptions', $options['jsoptions']);    
-    }
-    parent::configure($options, $attributes);
-  }
-  
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    $jsoptions = $this->getOption('jsoptions');
-    if($jsoptions)
-    {   
-      $this->setJSOptions($name, $value, $attributes, $errors);
-    }
-    return parent::render($name, $value, $attributes, $errors).$this->_editor->replace($name); 
+    $attributes['id'] = $this->generateId($name, $value);
+    return parent::render($name, $value, $attributes, $errors).$this->initCKEditor($attributes['id']);
 
   }
-  protected function setJSOptions($name, $value = null, $attributes = array(), $errors = array())
-  {
-    $jsoptions = $this->getOption('jsoptions');
-    foreach($jsoptions as $k => $v)
-    {
-      $this->_editor->config[$k] = $v;
-    }
+
+  public function initCKEditor($id, $width = 800, $height = 200){
+    return "<script>
+              if ( CKEDITOR.env.ie && CKEDITOR.env.version < 9 )
+                CKEDITOR.tools.enableHtml5Elements( document );
+              
+              // The trick to keep the editor in the sample quite small
+              // unless user specified own height.
+              CKEDITOR.config.height = ".$height.";
+              CKEDITOR.config.width = '".$width."';
+              
+              var initSample = ( function() {
+                var wysiwygareaAvailable = isWysiwygareaAvailable();
+              
+                return function() {
+                  var editorElement = CKEDITOR.document.getById( '".$id."' );
+              
+                  // Depending on the wysiwygarea plugin availability initialize classic or inline editor.
+                  if ( wysiwygareaAvailable ) {
+                    CKEDITOR.replace( '".$id."' );
+                  } else {
+                    editorElement.setAttribute( 'contenteditable', 'true' );
+                    CKEDITOR.inline( '".$id."' );
+              
+                  }
+                };
+              
+                function isWysiwygareaAvailable() {
+                  // If in development mode, then the wysiwygarea must be available.
+                  // Split REV into two strings so builder does not replace it :D.
+                  if ( CKEDITOR.revision == ( '%RE' + 'V%' ) ) {
+                    return true;
+                  }
+              
+                  return !!CKEDITOR.plugins.get( 'wysiwygarea' );
+                }
+              } )();
+              
+              initSample();
+              </script>";
   }
-  public function getEditor()
-  {
-    return $this->_editor;
-  }  
-  public function getFinder()
-  {
-    return $this->_finder;
-  }  
 }
