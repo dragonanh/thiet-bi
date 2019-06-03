@@ -1,4 +1,4 @@
-
+<?php if(empty($mode) || $mode == 'desktop'): ?>
   <li class="animate-dropdown dropdown ">
     <a class="cart-contents" href="<?php echo url_for('@cart') ?>" data-toggle="dropdown" title="Xem giỏ hàng">
       <i class="tm tm-shopping-bag"></i>
@@ -26,7 +26,7 @@
                   </li>
                 <?php endforeach; ?>
               </ul>
-            <?php endif ?>
+
             <!-- .cart_list -->
             <p class="woocommerce-mini-cart__total total">
               <strong>Tổng tiền:</strong>
@@ -36,6 +36,12 @@
               <a href="<?php echo url_for('@cart') ?>" class="button wc-forward">Xem giỏ hàng</a>
               <a href="<?php echo url_for('@checkout') ?>" class="button checkout wc-forward">Thanh toán</a>
             </p>
+
+            <?php else: ?>
+                <ul class="woocommerce-mini-cart cart_list product_list_widget ">
+                    <li class="woocommerce-mini-cart-item mini_cart_item"><strong>Chưa có sản phẩm nào trong giỏ hàng</strong></li>
+                </ul>
+            <?php endif ?>
           </div>
         </div>
         <!-- .widget_shopping_cart -->
@@ -43,3 +49,9 @@
     </ul>
     <!-- .dropdown-menu-mini-cart -->
   </li>
+<?php else: ?>
+    <a class="handheld-header-cart-link has-icon" href="<?php echo url_for('@cart') ?>" title="Xem giỏ hàng">
+        <i class="tm tm-shopping-bag"></i>
+        <span class="count"><?php echo VtHelper::formatNumber($totalProduct) ?></span>
+    </a>
+<?php endif ?>

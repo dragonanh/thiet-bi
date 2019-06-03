@@ -10,7 +10,10 @@
 class CommonComponents extends sfComponents
 {
     public function executeHeader(){
-//      $this->listCategory = CategoryTable::getListActiveCategory(7);
+
+    }
+    public function executeMenu(){
+      $this->listCategory = CategoryTable::getListActiveCategory(7);
     }
 
     public function executeSidebarRight(){

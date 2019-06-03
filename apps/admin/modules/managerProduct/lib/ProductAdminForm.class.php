@@ -54,9 +54,7 @@ class ProductAdminForm extends BaseProductForm
               'mime_types' => 'File upload phải có định dạng .jpeg, .jpg và .png ')
       );
 
-      $this->widgetSchema['content'] = new sfWidgetFormCKEditor(array(
-          'jsoptions' => array('width' => '800px','height' => '200px')
-      ));
+      $this->widgetSchema['content'] = new sfWidgetFormCKEditor();
       $this->validatorSchema['content'] = new sfValidatorString(array(
           'trim' => true,
           'required' => true

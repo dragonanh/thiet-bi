@@ -1886,7 +1886,7 @@
                     </section>
                     <!-- .section-products-carousel-tabs -->
 
-
+                    <?php include_component('Homepage', 'recentlyViewed') ?>
                 </main>
                 <!-- #main -->
             </div>

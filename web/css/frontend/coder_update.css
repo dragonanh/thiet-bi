@@ -1,3 +1,16 @@
 body, button, input, textarea{
     font-family: Roboto,"Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
+.single-product .woocommerce-tabs #tab-description > h2{
+    border: none;
+}
+.cart-wrapper > form{
+    background-color: #f9f9f9;
+}
+table.cart thead th{
+    font-weight: 500;
+}
+.cart-collaterals .cart_totals .shop_table tr:last-child td, .cart-collaterals .cart_totals .shop_table tr:last-child th{
+    border-top: none;
+    border-bottom: 1px solid #bebebe;
+}
