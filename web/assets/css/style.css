@@ -4486,19 +4486,19 @@ body.can-uppercase .section-categories-carousel.section-top-categories .readmore
       padding-left: 15px; } }
   @media (min-width: 1590px) {
     .site-header .site-header-cart {
-      flex: 0 0 9.5402299167%;
-      max-width: 9.5402299167%; } }
+      flex: 0 0 16.5402299167%;
+      max-width: 16.5402299167%; } }
 
 @media (min-width: 1200px) and (max-width: 1699px) {
   .site-header .site-header-cart {
-    flex: 0 0 12.0402299167%;
-    max-width: 12.0402299167%;
+    flex: 0 0 19.0402299167%;
+    max-width: 19.0402299167%;
     padding-right: 0; } }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .site-header .site-header-cart {
-    flex: 0 0 16.6666666667%;
-    max-width: 16.6666666667%;
+    flex: 0 0 19.6666666667%;
+    max-width: 19.6666666667%;
     margin-left: 0.5em;
     margin-bottom: 20px; } }
 
