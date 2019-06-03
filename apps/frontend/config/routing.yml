@@ -22,7 +22,7 @@ checkout:
 
 ####################################### AJAX ########################################
 ajax_add_to_cart:
-  url: /ajax/them-vao-gio-hang/:id
+  url: /ajax/them-vao-gio-hang/:id/:act
   param: { module: Cart, action: ajaxAddToCart}
 ####################################### END AJAX ####################################
 

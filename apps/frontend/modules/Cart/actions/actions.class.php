@@ -42,10 +42,26 @@ class CartActions extends sfActions
     $sessionName = 'Cart.listProduct';
     $listProductInCart = $this->getUser()->getAttribute($sessionName, [], 'frontend');
     $maxProductInCart = 10;
-    if(count($listProductInCart) > $maxProductInCart){
+    if(count($listProductInCart) >= $maxProductInCart){
       return $this->renderText(json_encode([
         'errorCode' => 1,
         'message' => sprintf('Giỏ hàng đã quá số lượng cho phép (Tối đa %s sản phẩm)', $maxProductInCart)
+      ]));
+    }
+
+    $action = $request->getParameter('act', 'new');
+    if(!$action || !in_array($action, ['new','update'])){
+      return $this->renderText(json_encode([
+        'errorCode' => 1,
+        'message' => 'Tham số không hợp lệ'
+      ]));
+    }
+
+    $newQuantity = $request->getParameter('quantity', 1);
+    if($newQuantity <= 0 || !preg_match('/^[0-9]+$/', $newQuantity)){
+      return $this->renderText(json_encode([
+        'errorCode' => 1,
+        'message' => 'Vui lòng nhập số nguyên dương'
       ]));
     }
 
@@ -56,37 +72,41 @@ class CartActions extends sfActions
         if ($productInCart['id'] == $product->getId()) {
           //truong hop da ton tai san pham trong gio hang
           //thuc hien tang so luong
+          if($action == 'update')
+            $quantity = $newQuantity;
+          else
+            $quantity = $productInCart['quantity'] + $newQuantity;
           $isExist = true;
-          if($productInCart['quantity'] > $maxQuantity){
+          if($quantity > $maxQuantity){
             return $this->renderText(json_encode([
               'errorCode' => 1,
               'message' => sprintf('%s đã quá số lượng cho phép (Tối đa %s)', $productInCart['name'], $maxProductInCart)
             ]));
           }
 
-          $listProductInCart[$key]['quantity'] = $productInCart['quantity']+1;
+          $listProductInCart[$key]['quantity'] = $quantity;
           break;
         }
       }
     }
 
-    if(!$isExist) {
+    if(!$isExist && $action == 'new') {
       $listProductInCart[] = [
         'id' => $product->getId(),
         'slug' => $product->getSlug(),
         'name' => $product->getName(),
         'price' => $product->getPrice(),
         'image_path' => $product->getImagePath(),
-        'quantity' => 1
+        'quantity' => $newQuantity
       ];
     }
     $this->getUser()->setAttribute($sessionName, $listProductInCart, 'frontend');
 
     return $this->renderText(json_encode([
       'errorCode' => 0,
-      'message' => 'Thêm vào giỏ hàng thành công',
-      'template' => $this->getComponent('Common', 'cart')
+      'message' => $action == 'update' ? 'Cập nhật giỏ hàng thành công' : 'Thêm vào giỏ hàng thành công',
+      'template' => $this->getComponent('Common', 'cart'),
+      'templateCartPage' => $action == 'update' ? $this->getComponent('Cart','cartContent') : ""
     ]));
   }
-
 }

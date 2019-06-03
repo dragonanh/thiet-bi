@@ -14,3 +14,7 @@ table.cart thead th{
     border-top: none;
     border-bottom: 1px solid #bebebe;
 }
+.quantity .btnAddToCart{
+    vertical-align: top;
+    padding: 9px
+}

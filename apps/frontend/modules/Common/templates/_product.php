@@ -12,6 +12,6 @@
   </a>
   <div class="hover-area">
     <a class="button add_to_cart_button btnAddToCart" href="javascript:void(0)" rel="nofollow"
-       data-url="<?php echo url_for('ajax_add_to_cart', ['id' => $product['id']]) ?>">Thêm vào giỏ hàng</a>
+       data-url="<?php echo url_for('ajax_add_to_cart', ['id' => $product['id'], 'act' => 'new']) ?>">Thêm vào giỏ hàng</a>
   </div>
 </div>

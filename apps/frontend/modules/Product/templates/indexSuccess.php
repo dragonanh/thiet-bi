@@ -54,11 +54,13 @@
                                         <!-- .single-product-header -->
                                         <form enctype="multipart/form-data" method="post" class="cart">
                                             <div class="quantity">
-                                                <label for="quantity-input">Quantity</label>
-                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" id="quantity-input">
+                                                <label for="quantity-input">Số lượng</label>
+                                                <input type="number" size="4" class="input-text qty text" title="Số lượng" value="1" name="quantity" id="quantity-input-<?php $product['id'] ?>">
                                             </div>
                                             <!-- .quantity -->
-                                            <button class="single_add_to_cart_button button alt" value="185" name="add-to-cart" type="submit"><?php echo __('Thêm vào giỏ hàng') ?></button>
+                                            <button class="single_add_to_cart_button button alt btnAddToCart" data-target="#quantity-input-<?php $product['id'] ?>"
+                                                    data-url="<?php echo url_for('ajax_add_to_cart', ['id' => $product['id'], 'act' => 'new']) ?>"
+                                                    name="add-to-cart" type="button"><?php echo __('Thêm vào giỏ hàng') ?></button>
                                         </form>
                                         <!-- .cart -->
                                     </div>

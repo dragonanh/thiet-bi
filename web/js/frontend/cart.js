@@ -1,21 +1,28 @@
 var isAdding = 0;
-$(document).ready(function () {
-  $('.btnAddToCart').on('click', function () {
-    addToCart($(this))
-  })
+
+$(document).on('click','.btnAddToCart', function () {
+  addToCart($(this))
 });
 
 function addToCart(obj) {
   if(isAdding === 0){
     isAdding = 1;
+    var data = {};
+    if(obj.attr('data-target')){
+      data.quantity = $(obj.attr('data-target')).val()
+    }
     $.ajax({
       url: obj.attr('data-url'),
       type: 'post',
+      data: data,
       success: function (response) {
         isAdding = 0;
         alert(response.message);
         if(response.errorCode === 0){
-          $('#site-header-cart').html(response.template)
+          $('#site-header-cart').html(response.template);
+          if(response.templateCartPage){
+            $('.cart-wrapper').html(response.templateCartPage)
+          }
         }
       },
       error: function (request, status, err) {
