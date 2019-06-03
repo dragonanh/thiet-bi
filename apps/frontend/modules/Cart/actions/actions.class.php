@@ -22,7 +22,7 @@ class CartActions extends sfActions
 
   public function executeAjaxAddToCart(sfWebRequest $request){
     $this->getResponse()->setContentType('application/json; charset=utf-8');
-    $productId = $request->getParameter('id');
+    $productId = trim($request->getParameter('id'));
     if(!$productId){
       return $this->renderText(json_encode([
         'errorCode' => 1,
@@ -39,8 +39,7 @@ class CartActions extends sfActions
     }
 
 
-    $sessionName = 'Cart.listProduct';
-    $listProductInCart = $this->getUser()->getAttribute($sessionName, [], 'frontend');
+    $listProductInCart = $this->getUser()->getListProductInCart();
     $maxProductInCart = 10;
     if(count($listProductInCart) >= $maxProductInCart){
       return $this->renderText(json_encode([
@@ -100,13 +99,42 @@ class CartActions extends sfActions
         'quantity' => $newQuantity
       ];
     }
-    $this->getUser()->setAttribute($sessionName, $listProductInCart, 'frontend');
+    $this->getUser()->updateCart($listProductInCart);
 
     return $this->renderText(json_encode([
       'errorCode' => 0,
       'message' => $action == 'update' ? 'Cập nhật giỏ hàng thành công' : 'Thêm vào giỏ hàng thành công',
       'template' => $this->getComponent('Common', 'cart'),
       'templateCartPage' => $action == 'update' ? $this->getComponent('Cart','cartContent') : ""
+    ]));
+  }
+
+  public function executeAjaxRemoveItem(sfWebRequest $request){
+    $this->getResponse()->setContentType('application/json; charset=utf-8');
+    $productId = trim($request->getParameter('id'));
+    if(!$productId){
+      return $this->renderText(json_encode([
+        'errorCode' => 1,
+        'message' => 'Thiếu tham số'
+      ]));
+    }
+
+    $listProductInCart = $this->getUser()->getListProductInCart();
+    if(count($listProductInCart)){
+      foreach ($listProductInCart as $key => $productInCart) {
+        if ($productInCart['id'] == $productId) {
+          unset($listProductInCart[$key]);
+          break;
+        }
+      }
+    }
+    $this->getUser()->updateCart($listProductInCart);
+
+    return $this->renderText(json_encode([
+      'errorCode' => 0,
+      'message' => 'Xoá sản phẩm thành công',
+      'template' => $this->getComponent('Common', 'cart'),
+      'templateCartPage' => $this->getComponent('Cart','cartContent')
     ]));
   }
 }

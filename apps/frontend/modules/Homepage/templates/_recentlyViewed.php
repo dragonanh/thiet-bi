@@ -10,7 +10,7 @@
             <div class="products">
               <?php foreach ($listProduct as $product): ?>
                   <div class="landscape-product product">
-                    <a class="woocommerce-LoopProduct-link" href="single-product-fullwidth.html">
+                    <a class="woocommerce-LoopProduct-link" href="<?php echo url_for('detail_product', ['slug' => $product['slug']]) ?>">
                       <div class="media">
                         <img class="wp-post-image" src="<?php echo $product['image_path'] ?>" alt="<?php echo $product['name'] ?>">
                         <div class="media-body">

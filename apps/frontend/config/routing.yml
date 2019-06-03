@@ -24,6 +24,9 @@ checkout:
 ajax_add_to_cart:
   url: /ajax/them-vao-gio-hang/:id/:act
   param: { module: Cart, action: ajaxAddToCart}
+ajax_remove_item_from_cart:
+  url: /ajax/remove-item-from-cart/:id
+  param: { module: Cart, action: ajaxRemoveItem}
 ####################################### END AJAX ####################################
 
 homepage:

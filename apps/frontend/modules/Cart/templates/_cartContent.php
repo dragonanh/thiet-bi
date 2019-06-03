@@ -48,7 +48,8 @@
           <span class="woocommerce-Price-amount amount">
               <?php echo VtHelper::formatNumber($product['price'] * $product['quantity']) ?> đ
           </span>
-          <a title="Xóa sản phẩm" class="remove" href="javascript:void(0)">×</a>
+          <a title="Xóa sản phẩm" class="remove btnRemoveItemInCart" href="javascript:void(0)"
+             data-url="<?php echo url_for('ajax_remove_item_from_cart', ['id' => $product['id']]) ?>">×</a>
         </td>
       </tr>
     <?php endforeach; ?>

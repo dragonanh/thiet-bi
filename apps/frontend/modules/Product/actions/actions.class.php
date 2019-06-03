@@ -65,10 +65,14 @@ class ProductActions extends sfActions
       if($category) {
         $this->category = $category;
         $page = (int)$request->getParameter('page',1);
+        $this->listMaxPerPage = [20, 40, 100];
         $query = ProductTable::getListProductByCategoryQuery($category->getId());
-        $this->pager = VtHelper::setPager($query,$page, 'Product', 16);
+        $maxPerPage = (int)$request->getParameter('max_per_page', 20);
+        if(!in_array($maxPerPage, $this->listMaxPerPage))
+          $maxPerPage = 20;
+        $this->pager = VtHelper::setPager($query,$page, 'Product', $maxPerPage);
         $this->getResponse()->addMeta('title', $category->getName());
-        $this->url = $this->generateUrl('list_product_category', array('slug' => $slug));
+        $this->url = $this->generateUrl('list_product_category', array('slug' => $slug, 'max_per_page' => $maxPerPage));
       }else
         $this->forward404();
     }else{

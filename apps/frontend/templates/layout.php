@@ -13,7 +13,7 @@
     <link rel="alternate" href="<?php echo url_for('homepage', array(), true)?>" hreflang="vi-vn" />
 
     <?php include_stylesheets() ?>
-    <link href="/css/frontend/coder_update.css?v=1.4" media="all" type="text/css" rel="stylesheet"/>
+    <link href="/css/frontend/coder_update.css?v=1.6" media="all" type="text/css" rel="stylesheet"/>
   </head>
   <body class="<?php echo get_slot('body_class') ?>">
     <div id="page" class="hfeed site">
@@ -23,7 +23,7 @@
       <?php include_partial('Common/footer')?>
     </div>
     <?php include_javascripts() ?>
-    <script type="text/javascript" src="/js/frontend/cart.js"></script>
+    <script type="text/javascript" src="/js/frontend/cart.js?v=1.2"></script>
     <script type="text/javascript" src="/js/custom.js"></script>
   </body>
 </html>

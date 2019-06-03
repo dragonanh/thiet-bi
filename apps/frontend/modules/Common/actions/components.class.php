@@ -17,13 +17,12 @@ class CommonComponents extends sfComponents
     }
 
     public function executeSidebarRight(){
-      $this->listFeaturedProduct = ProductTable::getListFeaturedProduct(5);
+      $this->listNewestProduct = ProductTable::getListNewestProduct(5);
       $this->listArticle = ArticleTable::getListArticleByPosition(ArticleGroupPosition::SIDEBAR_RIGHT, 7);
     }
 
     public function executeCart(){
-      $sessionName = 'Cart.listProduct';
-      $listProductInCart = $this->getUser()->getAttribute($sessionName, [], 'frontend');
+      $listProductInCart = $this->getUser()->getListProductInCart();
       $totalPrice = $totalProduct = 0;
       if(count($listProductInCart)){
         foreach ($listProductInCart as $product){

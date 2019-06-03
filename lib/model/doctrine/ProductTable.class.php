@@ -47,10 +47,10 @@ class ProductTable extends Doctrine_Table
         ->fetchArray();
     }
 
-    public static function getListFeaturedProduct($limit = null){
+    public static function getListNewestProduct($limit = null){
       $query = self::getInstance()->createQuery('p')
         ->andWhere('p.status = ?', ProductStatus::ACTIVE)
-        ->orderBy('p.priority');
+        ->orderBy('p.created_at desc');
       if($limit)
         $query->andWhere($limit);
 

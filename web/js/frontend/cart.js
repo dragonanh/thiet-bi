@@ -3,6 +3,12 @@ var isAdding = 0;
 $(document).on('click','.btnAddToCart', function () {
   addToCart($(this))
 });
+$(document).on('click','.btnRemoveItemInCart', function () {
+  if(confirm('Bạn có chắc chắn muốn xoá không?'))
+    addToCart($(this));
+  else
+    return false
+});
 
 function addToCart(obj) {
   if(isAdding === 0){

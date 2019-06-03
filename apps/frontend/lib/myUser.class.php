@@ -53,4 +53,14 @@ class myUser extends sfBasicSecurityUser
   public function logoutAll() {
     $this->getAttributeHolder()->clear();
   }
+
+  public function getListProductInCart(){
+    $sessionName = 'Cart.listProduct';
+    return $this->getAttribute($sessionName, [], 'frontend');
+  }
+
+  public function updateCart($listProductInCart){
+    $sessionName = 'Cart.listProduct';
+    $this->setAttribute($sessionName, $listProductInCart, 'frontend');
+  }
 }
