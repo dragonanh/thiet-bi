@@ -12,7 +12,7 @@ detail_article:
   param: { module: VtArticle, action: index}
 search_product:
   url: /tim-kiem
-  param: { module: vtPageSearch, action: index}
+  param: { module: PageSearch, action: index}
 cart:
   url: /gio-hang
   param: { module: Cart, action: index}
@@ -32,6 +32,9 @@ ajax_remove_item_from_cart:
 homepage:
   url:   /
   param: { module: Homepage, action: index }
+error404:
+  url:   /lien-ket-khong-ton-tai
+  param: { module: Common, action: error404 }
 
 # generic rules
 # please, remove them by adding more specific rules

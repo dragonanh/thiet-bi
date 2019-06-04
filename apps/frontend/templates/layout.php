@@ -13,7 +13,7 @@
     <link rel="alternate" href="<?php echo url_for('homepage', array(), true)?>" hreflang="vi-vn" />
 
     <?php include_stylesheets() ?>
-    <link href="/css/frontend/coder_update.css?v=1.6" media="all" type="text/css" rel="stylesheet"/>
+    <link href="/css/frontend/coder_update.css?v=1.7" media="all" type="text/css" rel="stylesheet"/>
   </head>
   <body class="<?php echo get_slot('body_class') ?>">
     <div id="page" class="hfeed site">

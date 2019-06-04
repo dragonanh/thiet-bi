@@ -52,7 +52,7 @@ class ProductTable extends Doctrine_Table
         ->andWhere('p.status = ?', ProductStatus::ACTIVE)
         ->orderBy('p.created_at desc');
       if($limit)
-        $query->andWhere($limit);
+        $query->limit($limit);
 
       return $query->fetchArray();
     }
@@ -65,8 +65,8 @@ class ProductTable extends Doctrine_Table
 
     public static function searchProduct($params){
       $query = self::getListProductActiveQuery();
-      if($params['key_search']){
-        $query->andWhere('(name like ? Or description like ?)', array('%'.$params['key_search'].'%', '%'.$params['key_search'].'%'));
+      if($params['kw']){
+        $query->andWhere('(name like ? Or description like ?)', array('%'.$params['kw'].'%', '%'.$params['kw'].'%'));
       }
       return $query;
     }

@@ -17,7 +17,7 @@ class CommonComponents extends sfComponents
     }
 
     public function executeSidebarRight(){
-      $this->listNewestProduct = ProductTable::getListNewestProduct(5);
+      $this->listNewestProduct = ProductTable::getListNewestProduct(15);
       $this->listArticle = ArticleTable::getListArticleByPosition(ArticleGroupPosition::SIDEBAR_RIGHT, 7);
     }
 

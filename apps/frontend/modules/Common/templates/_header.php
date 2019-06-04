@@ -11,10 +11,10 @@
             <!-- /.site-branding -->
             <!-- ============================================================= End Header Logo ============================================================= -->
 
-            <form class="navbar-search" method="get" action="home-v1.html">
+            <form class="navbar-search" method="get" action="<?php echo url_for('search_product') ?>">
                 <label class="sr-only screen-reader-text" for="search">Search for:</label>
                 <div class="input-group">
-                    <input type="text" id="search" class="form-control search-field product-search-field" dir="ltr" value="" name="s" placeholder="Tìm kiếm sản phẩm..." />
+                    <input type="text" id="search" class="form-control search-field product-search-field" dir="ltr" value="<?php echo $sf_request->getParameter('kw') ?>" name="kw" placeholder="Tìm kiếm sản phẩm..." />
                     <!-- .input-group-addon -->
                     <div class="input-group-btn input-group-append">
                         <button type="submit" class="btn btn-primary">
@@ -80,9 +80,9 @@
                     <!-- .handheld-navigation -->
                     <div class="site-search">
                         <div class="widget woocommerce widget_product_search">
-                            <form role="search" method="get" class="woocommerce-product-search" action="home-v1.html">
+                            <form role="search" method="get" class="woocommerce-product-search" action="<?php echo url_for('search_product') ?>">
                                 <label class="screen-reader-text" for="woocommerce-product-search-field-0">Search for:</label>
-                                <input type="search" id="woocommerce-product-search-field-0" class="search-field" placeholder="Search products&hellip;" value="" name="s" />
+                                <input type="search" id="woocommerce-product-search-field-0" class="search-field" placeholder="Search products&hellip;" value="<?php echo $sf_request->getParameter('kw') ?>" name="kw" />
                                 <input type="submit" value="Search" />
                             </form>
                         </div>
