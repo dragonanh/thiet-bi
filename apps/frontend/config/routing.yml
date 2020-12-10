@@ -19,6 +19,9 @@ cart:
 checkout:
   url: /thanh-toan
   param: { module: Cart, action: checkout}
+orderReceived:
+  url: /thanh-toan-thanh-cong
+  param: { module: Cart, action: orderReceived}
 
 ####################################### AJAX ########################################
 ajax_add_to_cart:

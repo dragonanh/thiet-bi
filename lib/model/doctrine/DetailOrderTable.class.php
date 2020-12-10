@@ -16,4 +16,18 @@ class DetailOrderTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('DetailOrder');
     }
+
+    public static function saveOrder($orderId, $productId, $productName, $price, $quantity){
+        try{
+            $order = new DetailOrder();
+            $order->setOrderId($orderId);
+            $order->setProductId($productId);
+            $order->setProductName($productName);
+            $order->setPrice($price);
+            $order->setQuantity($quantity);
+            $order->save();
+        }catch(Exception $e){
+
+        }
+    }
 }

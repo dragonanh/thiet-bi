@@ -3,30 +3,7 @@
         <div class="before-footer-wrap">
             <div class="col-full">
                 <div class="footer-newsletter">
-                    <div class="media">
-                        <i class="footer-newsletter-icon tm tm-newsletter"></i>
-                        <div class="media-body">
-                            <div class="clearfix">
-                                <div class="newsletter-header">
-                                    <h5 class="newsletter-title">Sign up to Newsletter</h5>
-                                    <span class="newsletter-marketing-text">...and receive
-                                                    <strong>$20 coupon for first shopping</strong>
-                                                </span>
-                                </div>
-                                <!-- .newsletter-header -->
-                                <div class="newsletter-body">
-                                    <form class="newsletter-form">
-                                        <input type="text" placeholder="Enter your email address">
-                                        <button class="button" type="button">Sign up</button>
-                                    </form>
-                                </div>
-                                <!-- .newsletter body -->
-                            </div>
-                            <!-- .clearfix -->
-                        </div>
-                        <!-- .media-body -->
-                    </div>
-                    <!-- .media -->
+
                 </div>
                 <!-- .footer-newsletter -->
                 <div class="footer-social-icons">
@@ -58,12 +35,65 @@
             <!-- .col-full -->
         </div>
         <!-- .before-footer-wrap -->
+        <div class="footer-widgets-block">
+            <div class="row">
+                <div class="footer-contact">
+                    <div class="contact-payment-wrap">
+                        <div>
+                            <div class="media-title">tech market</div>
+                            <div class="is-divider small"></div>
+                            <div class="media">
+                                <div class="media-body">
+                                    <p>Đại Lý Phân Phối, Bán Buôn – Bán Lẻ Các Dụng Cụ Cờ Bạc Bịp, Xóc Đĩa Bịp, Bài Bịp, Bầu Cua Bịp, Tài Xỉu Bịp, Bầu Cua Bịp, Đồ Công Nghệ Cao.</p>
+                                    <p>Uy tín – chất lượng là mục tiêu hàng đầu với đội ngũ nhân viên chuyên nghiệp bạn sẽ cảm nhận được dịch vụ tốt nhất từ phía chúng tôi.</p>
+                                </div>
+                                <!-- .media-body -->
+                            </div>
+                            <!-- .media -->
+                        </div>
+                        <!-- .footer-contact-info -->
+                        <div>
+                            <div class="media-title">Từ khóa phổ biến</div>
+                            <div class="is-divider small"></div>
+                            <div class="media">
+                                <div class="media-body">
+                                    <a class="btn btn-primary" href="javascript:void(0)">bai bac bip</a>
+                                    <a class="btn btn-primary" href="javascript:void(0)">Máy ghi âm</a>
+                                    <a class="btn btn-primary" href="javascript:void(0)">camera</a>
+                                </div>
+                                <!-- .media-body -->
+                            </div>
+                            <!-- .media -->
+                        </div>
+
+                        <div>
+                            <div class="media-title">Thông tin liên hệ</div>
+                            <div class="is-divider small"></div>
+                            <div class="media">
+                                <div class="media-body">
+                                    <p>Địa chỉ: Tầng 26 - Toà Nhà Keangnam - Đường Phạm Hùng - Thành phố Hà Nội.</p>
+                                    <p>Hotline: 098 440 9999</p>
+                                    <p>Website: anhhabip.com</p>
+                                </div>
+                                <!-- .media-body -->
+                            </div>
+                            <!-- .media -->
+                        </div>
+                        <!-- .footer-payment-info -->
+                    </div>
+                    <!-- .contact-payment-wrap -->
+                </div>
+                <!-- .footer-contact -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .footer-widgets-block -->
         <div class="site-info">
             <div class="col-full">
-                <div class="copyright">Copyright &copy; 2017 <a href="<?php echo url_for('@homepage') ?>">Techmarket</a> Theme. All rights reserved.</div>
+                <div class="copyright">Copyright &copy; 2017 <a href="home-v1.html">Techmarket</a> Theme. All rights reserved.</div>
                 <!-- .copyright -->
                 <div class="credit">Made with
-                    <i class="fa fa-heart"></i> by dragonanh.</div>
+                    <i class="fa fa-heart"></i> by bcube.</div>
                 <!-- .credit -->
             </div>
             <!-- .col-full -->

@@ -24,3 +24,27 @@ table.cart thead th{
 .num-search-result{
     color: #f5363e
 }
+.site-footer .footer-widgets-block{
+    padding-top: 0;
+    margin-bottom: 0
+}
+.contact-payment-wrap > div{
+    flex-grow: 1;
+    width: 33%;
+    padding: 10px
+}
+.site-footer .footer-widgets-block .media-title{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #444
+}
+.site-footer .footer-widgets-block .is-divider{
+    background-color: rgba(84, 103, 143, 0.3);
+    width: 100%;
+    max-width: 30px;
+    height: 3px;
+    margin-bottom: 10px
+}
+.footer-contact a{
+    color: #fff !important;
+}

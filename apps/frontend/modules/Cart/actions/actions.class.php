@@ -137,4 +137,38 @@ class CartActions extends sfActions
       'templateCartPage' => $this->getComponent('Cart','cartContent')
     ]));
   }
+
+  public function executeCheckout(sfWebRequest $request){
+    $this->error = null;
+    $sessionName = 'Cart.listProduct';
+    $listProductInCart = $this->getUser()->getAttribute($sessionName, [], 'frontend');
+    if(count($listProductInCart)){
+      $this->listProductInCart = $listProductInCart;
+      $this->form = new CustomerOrderFrontForm();
+      if($request->isMethod("post")){
+        $this->form->bind($request->getParameter($this->form->getName()));
+        if($this->form->isValid()){
+          try{
+              $order = $this->form->save();
+              $orderId = $order->getId();
+
+              foreach ($listProductInCart as $product){
+                DetailOrderTable::saveOrder($orderId, $product['id'], $product['name'], $product['price'], $product['quantity']);
+              }
+              
+              $this->getUser()->setAttribute("checkout.success", ["customer_info" => $this->form->getValues(), "cart" => $listProductInCart], 'frontend');
+              $this->redirect("orderReceived");
+          }catch(Exception $e){
+           var_dump($e->getMessage());die;
+          }
+        }
+      }
+    }else{
+      $this->error =  "Vui lòng chọn sản phẩm trước khi đặt hàng";
+    }
+  }
+
+  public function executeOrderReceived(sfWebRequest $request){
+
+  }
 }
