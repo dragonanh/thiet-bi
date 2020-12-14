@@ -1,30 +1,27 @@
+<?php if(count($banners)):?>
 <div class="homev3-slider-with-banners row">
   <div class="slider">
     <div class="home-v3-slider home-slider">
-      <div class="slider-1">
-        <img src="<?php echo sfConfig::get("app_domain_web_root")?>/assets/images/slider/home-v3-img-1.png" alt="">
-        <div class="caption">
-          <div class="title">The new-tech gift you are wishing for
-            <br>is right here</div>
-          <div class="sub-title">Big screens in incredibly slim designs that in your hand.</div>
-          <div class="button">Browse now
-            <i class="tm tm-long-arrow-right"></i>
+
+      <?php foreach($banners as $banner):?>
+        <div class="slider-1">
+          <img class="banner_image" src="<?php echo sfConfig::get("app_domain_web_root").$banner["image_path"]?>" alt="<?= $banner["title"] ?>">
+          <div class="caption">
+            <div class="title"><?= $banner["title"] ?></div>
+            <div class="sub-title"><?= $banner["description"] ?></div>
+            <?php if($banner["link"]): ?>
+              <div class="button">
+                <a href="<?= $banner["link"] ?>">
+                  Xem ngay
+                  <i class="tm tm-long-arrow-right"></i>
+                </a>
+              </div>
+            <?php endif;?>
           </div>
-          <div class="bottom-caption">Free shipping on US Terority</div>
         </div>
-      </div>
-      <div class="slider-1 slider-2">
-        <img src="<?php echo sfConfig::get("app_domain_web_root")?>/assets/images/slider/home-v1-img-2.png" alt="">
-        <div class="caption">
-          <div class="title">The new-tech gift you are wishing for
-            <br>is right here</div>
-          <div class="sub-title">Big screens in incredibly slim designs that in your hand.</div>
-          <div class="button">Browse now
-            <i class="tm tm-long-arrow-right"></i>
-          </div>
-          <div class="bottom-caption">Free shipping on US Terority</div>
-        </div>
-      </div>
+      <?php endforeach;?>
+
     </div>
   </div>
 </div>
+<?php endif?>

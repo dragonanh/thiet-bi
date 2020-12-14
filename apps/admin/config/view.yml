@@ -12,9 +12,15 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [main.css, admin/filters.css, admin/coder_update.css?v=1, jquery-ui-1.8.22.custom.css]
+  stylesheets:    
+    - <?php echo sfConfig::get("app_domain_web_root")?>/css/main.css
+    - <?php echo sfConfig::get("app_domain_web_root")?>/css/admin/filters.css
+    - <?php echo sfConfig::get("app_domain_web_root")?>/css/admin/coder_update.css?v=1
+    - <?php echo sfConfig::get("app_domain_web_root")?>/css/jquery-ui-1.8.22.custom.css
 
-  javascripts:    [jquery-ui-1.8.22.custom.min.js,admin/vtBackend.js]
+  javascripts:    
+    - <?php echo sfConfig::get("app_domain_web_root")?>/js/jquery-ui-1.8.22.custom.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/js/admin/vtBackend.js
 
   has_layout:     true
   layout:         layout

@@ -133,6 +133,22 @@ Article:
       local: group_id
       foreign: id
       onDelete: SET NULL
+Banner:
+  options:
+    comment:  'Bang luu thong tin banner'
+  tableName: banner
+  actAs:
+    Timestampable: ~
+  columns:
+    title: { type: string(255), comment: 'Tieu de bai viet' }
+    description: { type: string(255), comment: 'Mô tả ngắn' }
+    link: { type: string(255), comment: 'Đường dẫn sang trang chi tiết' }
+    image_path: {type: string(255), comment: "duong dan anh minh hoa bai viet"}
+    status: { type: integer(1), notnull: true, default: 0, comment: "0: khong hien thi, 1: hien thi"}
+    priority: {type: integer(5), default: 10, comment: 'Do uu tien' }
+  indexes:
+    banner_id_index:
+      fields: [id]
 
 SessionsAdmin:
   options:

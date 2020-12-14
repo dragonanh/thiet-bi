@@ -18,9 +18,7 @@ class ArticleAdminForm extends BaseArticleForm
     $this->widgetSchema['description'] = new sfWidgetFormTextarea(array(),array(
       'style' => 'width:320px'
     ));
-    $this->widgetSchema['content'] = new sfWidgetFormCKEditor(array(
-      'jsoptions' => array('width' => '800px','height' => '200px')
-    ));
+    $this->widgetSchema['content'] = new sfWidgetFormCKEditor();
     $this->validatorSchema['content'] = new sfValidatorString(array(
       'trim' => true,
       'required' => true

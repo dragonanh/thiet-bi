@@ -1,0 +1,40 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           Banner
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          banner
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        title: {label: Tiêu đề}
+        status: {label: Trạng thái}
+      list:
+        sort: [created_at, desc]
+        title: Quản lý banner
+        display: [order_no, =title, _image_path, description, _link, status_name]
+        object_actions:
+          _edit: ~
+          _delete: ~
+        fields:
+          order_no: {label: STT}
+          image_path: {label: Ảnh đại diện}
+          _link: {label: đường dẫn}
+          description: {label: Mô tả}
+          status_name: {label: Trạng thái}
+      filter:
+        class: BannerAdminFormFilter
+        display: [title, status]
+      form:
+        class: BannerAdminForm
+      edit:    ~
+      new:     ~
+      show:    ~
+      revert:  ~

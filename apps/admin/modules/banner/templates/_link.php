@@ -1,0 +1,1 @@
+<a target="_blank" href="<?php echo $banner->getLink()?>"><?php echo $banner->getLink()?></a>

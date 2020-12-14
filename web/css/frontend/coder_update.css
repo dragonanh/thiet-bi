@@ -51,6 +51,12 @@ table.cart thead th{
 .site-footer .before-footer-wrap{
     padding-top: 1em
 }
+.home-slider .banner_image{
+    height: inherit
+}
+.site-content .home-v3-slider .slider-1 img{
+    left: 41.9%
+}
 @media (max-width: 768px) {
     .features-list {display: none }
 }

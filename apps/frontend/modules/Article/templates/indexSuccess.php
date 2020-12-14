@@ -1,37 +1,45 @@
-<div role="main" class="main">
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <hr>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-9">
-        <div class="blog-posts single-post">
-
-          <article class="post post-large blog-single-post">
-            <div class="post-date">
-              <span class="day"><?php echo date('d', strtotime($article->getCreatedAt())) ?></span>
-              <span class="month">T<?php echo ltrim(date('m', strtotime($article->getCreatedAt())),"0") ?></span>
+<?php slot('body_class'); echo 'right-sidebar single single-post'; end_slot() ?>
+<div id="content" class="site-content">
+    <div class="col-full">
+        <div class="row">
+            <?php
+              include_partial('Common/breadcrumb', array('breadcrumb' => array(
+                  ['title' => "Tin tức"],
+              )))
+            ?>
+            <!-- .woocommerce-breadcrumb -->
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main">
+                    <article class="post format-image">
+                        <header class="entry-header">
+                            <h1 class="entry-title"><?php echo $article->getTitle() ?></h1>
+                            <!-- .entry-title -->
+                            <div class="entry-meta">
+                                <span class="posted-on">
+                                    <a rel="bookmark" href="javascript:void(0)">
+                                      <time datetime="<?= $article->getCreatedAt()?>" class="entry-date published"><?= $article->getCreatedAt()?></time>
+                                    </a>
+                                </span>
+                                <!-- .posted-on -->
+                            </div>
+                            <!-- .entry-meta -->
+                        </header>
+                        <!-- .entry-header -->
+                        <div class="entry-content" itemprop="articleBody">
+                          <?php echo VtHelper::strip_html_tags_and_decode($article->getContent()) ?>
+                        </div>
+                        <!-- .entry-content -->
+                    </article>
+                    <!-- .post -->
+                </main>
+                <!-- #main -->
             </div>
+            <!-- #primary -->
 
-            <div class="post-content">
-
-              <p class="post-title"><?php echo $article->getTitle() ?></p>
-
-              <?php echo VtHelper::strip_html_tags_and_decode($article->getContent()) ?>
-
-            </div>
-          </article>
-
+            <?php include_component('Common', 'sidebarRight') ?>
+            <!-- .sidebar-blog -->
         </div>
-      </div>
-
-      <?php include_component('vtCommon','sidebarRight') ?>
+        <!-- .row -->
     </div>
-
-  </div>
-
+    <!-- .col-full -->
 </div>

@@ -46,7 +46,7 @@ class ArticleActions extends sfActions
     }
     $query = ArticleTable::getArticleByPositionQuery($position);
     $this->pager = VtHelper::setPager($query, $this->page, 'Article', 10);
-
+    $this->totalItemInPage = 10;
     $this->metaArr = array('canonical' => array(
       'url' => $urlHeader
     ));

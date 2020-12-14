@@ -31,5 +31,9 @@ class HomepageComponents extends sfComponents
     $cookie_name = "ProductRecentlyViewed";
     $this->listProduct = isset($_COOKIE[$cookie_name]) ? json_decode($_COOKIE[$cookie_name], true) : [];
   }
+
+  public function executeBanner(){
+    $this->banners = BannerTable::getBanner();
+  }
   
 }

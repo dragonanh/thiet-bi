@@ -6,6 +6,8 @@
 all:
   ckeditor:
     basePath:  '/js/ckeditor/'
+  ckeditor:
+    basePath: '/js/ckeditor/'
   truncate_length: 50  ## Gia tri truncate length khi xau ky tu qua dai
   server_path: http://localhost:8090
   upload_images: '/uploads/images/'
@@ -43,6 +45,9 @@ all:
             Quản lý nhóm tin:
               credentials: [[admin,manager]]
               route: article_group
+            Quản lý banner:
+              credentials: [[admin,manager]]
+              route: banner
         Sản phẩm:
           credentials: [[admin,manager]]
           dropdown:

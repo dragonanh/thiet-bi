@@ -1,3 +1,12 @@
+banner:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Banner
+    module:               banner
+    prefix_path:          /banner
+    column:               id
+    with_wildcard_routes: true
+
 product:
   class: sfDoctrineRouteCollection
   options:

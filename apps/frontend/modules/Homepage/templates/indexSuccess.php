@@ -4,7 +4,7 @@
         <div class="row">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
-                    <?php include_partial('banner') ?>
+                    <?php include_component('Homepage','banner') ?>
 
                     <?php include_partial('features') ?>
                     <!-- /.features list -->

@@ -7,9 +7,12 @@ list_product_category:
 detail_product:
   url: /chi-tiet-san-pham/:slug
   param: { module: Product, action: index}
-detail_article:
+list_article:
+  url: /tin-tuc
+  param: { module: Article, action: listArticle}
+article_detail:
   url: /chi-tiet-bai-viet/:slug
-  param: { module: VtArticle, action: index}
+  param: { module: Article, action: index}
 search_product:
   url: /tim-kiem
   param: { module: PageSearch, action: index}
