@@ -5,3 +5,5 @@ all:
     active: true
     basePath: '/js/ckfinder/'
   default_meta_title: 'Cờ bạc bịp'
+  phone_number: "0354926551";
+  domain_web_root: "http://thietbicobacbip.com/web"

@@ -41,17 +41,16 @@
                                         ?>
                                           <div class="product <?php echo $class ?>">
                                               <a class="woocommerce-LoopProduct-link woocommerce-loop-product__link" href="<?php echo url_for('detail_product', ['slug' => $product->getSlug()]) ?>">
-                                                  <img width="224" height="197" alt="<?php echo $product->getName() ?>" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php echo $product->getImagePath() ?>">
-                                                  <span class="price">
-                                                        <span class="woocommerce-Price-amount amount"><?php echo VtHelper::formatNumber($product->getPrice()) ?> đ</span>
-                                                    </span>
+                                                  <img width="224" height="197" alt="<?php echo $product->getName() ?>" class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php echo sfConfig::get("app_domain_web_root").$product->getImagePath() ?>">
                                                   <h2 class="woocommerce-loop-product__title"><?php echo $product->getName() ?></h2>
                                               </a>
+                                              <a href="tel:<?php echo sfConfig::get("app_phone_number") ?>">
+                                                <span class="price">
+                                                    <span class="woocommerce-Price-amount amount">Liên hệ: <?php echo sfConfig::get("app_phone_number") ?></span>
+                                                </span>
+                                              </a>
                                               <!-- .woocommerce-LoopProduct-link -->
-                                              <div class="hover-area">
-                                                  <a class="button btnAddToCart" href="javascript:void(0)" rel="nofollow"
-                                                     data-url="<?php echo url_for('ajax_add_to_cart', ['id' => $product->getId(), 'act' => 'new']) ?>">Thêm vào giỏ hàng</a>
-                                              </div>
+                                              <div class="hover-area"> </div>
                                               <!-- .hover-area -->
                                           </div>
                                       <?php endforeach; ?>

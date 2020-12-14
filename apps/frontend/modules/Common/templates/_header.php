@@ -28,7 +28,7 @@
             </form>
 
             <ul id="site-header-cart" class="site-header-cart menu">
-                <?php include_component('Common', 'cart') ?>
+                <?php //include_component('Common', 'cart') ?>
             </ul>
 
         </div>
@@ -53,7 +53,7 @@
         <div class="handheld-header">
             <div class="row">
                 <div class="site-branding">
-                    <a href="home-v1.html" class="custom-logo-link" rel="home">
+                    <a href="<?php echo url_for('@homepage') ?>" class="custom-logo-link" rel="home">
                         TechMarket
                     </a>
                     <!-- /.custom-logo-link -->
@@ -90,7 +90,7 @@
                     </div>
                     <!-- .site-search -->
 
-                    <?php include_component('Common', 'cart', ['mode' => 'mobile']) ?>
+                    <?php //include_component('Common', 'cart', ['mode' => 'mobile']) ?>
                 </div>
                 <!-- /.row -->
             </div>

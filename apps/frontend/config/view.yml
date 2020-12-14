@@ -14,34 +14,34 @@ default:
     #robots:       index, follow
 
   stylesheets:
-    - /assets/css/bootstrap.min.css: { media: all }
-    - /assets/css/font-awesome.min.css: { media: all }
-    - /assets/css/bootstrap-grid.min.css: { media: all }
-    - /assets/css/bootstrap-reboot.min.css: { media: all }
-    - /assets/css/font-techmarket.css: { media: all }
-    - /assets/css/slick.css: { media: all }
-    - /assets/css/techmarket-font-awesome.css: { media: all }
-    - /assets/css/slick-style.css: { media: all }
-    - /assets/css/animate.min.css: { media: all }
-    - /assets/css/style.css?v=1: { media: all }
-    - /assets/css/colors/red.css: { media: all }
-    - /assets/css/roboto.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/bootstrap.min.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/font-awesome.min.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/bootstrap-grid.min.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/bootstrap-reboot.min.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/font-techmarket.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/slick.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/techmarket-font-awesome.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/slick-style.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/animate.min.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/style.css?v=1: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/colors/red.css: { media: all }
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/css/roboto.css: { media: all }
 
   javascripts:
-    - /assets/js/jquery.min.js
-    - /assets/js/tether.min.js
-    - /assets/js/bootstrap.min.js
-    - /assets/js/jquery-migrate.min.js
-    - /assets/js/hidemaxlistitem.min.js
-    - /assets/js/jquery-ui.min.js
-    - /assets/js/hidemaxlistitem.min.js
-    - /assets/js/jquery.easing.min.js
-    - /assets/js/scrollup.min.js
-    - /assets/js/jquery.waypoints.min.js
-    - /assets/js/waypoints-sticky.min.js
-    - /assets/js/pace.min.js
-    - /assets/js/slick.min.js
-    - /assets/js/scripts.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/jquery.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/tether.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/bootstrap.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/jquery-migrate.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/hidemaxlistitem.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/jquery-ui.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/hidemaxlistitem.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/jquery.easing.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/scrollup.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/jquery.waypoints.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/waypoints-sticky.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/pace.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/slick.min.js
+    - <?php echo sfConfig::get("app_domain_web_root")?>/assets/js/scripts.js
 
   has_layout:     true
   layout:         layout

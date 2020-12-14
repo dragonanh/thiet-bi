@@ -12,22 +12,29 @@
                         <div class="products">
                             <?php foreach ($listNewestProduct as $product): ?>
                                 <div class="landscape-product-widget product">
-                                    <a class="woocommerce-LoopProduct-link" href="<?php echo url_for('detail_product', ['slug' => $product['slug']]) ?>">
+                                    <div class="woocommerce-LoopProduct-link">  
                                         <div class="media">
-                                            <img class="wp-post-image" src="<?php echo $product['image_path'] ?>" alt="<?php echo $product['name'] ?>">
+                                            <a href="<?php echo url_for('detail_product', ['slug' => $product['slug']]) ?>">
+                                            <img class="wp-post-image" src="<?php echo sfConfig::get("app_domain_web_root").$product['image_path'] ?>" alt="<?php echo $product['name'] ?>">
+                                            </a>
                                             <div class="media-body">
+                                                <a href="<?php echo url_for('detail_product', ['slug' => $product['slug']]) ?>">
+                                                <h2 class="woocommerce-loop-product__title"><?php echo $product['name'] ?></h2>
+                                                </a>
+                                                <a href="tel:<?php echo sfConfig::get("app_phone_number") ?>">
                                                 <span class="price">
                                                     <ins>
-                                                        <span class="amount"><?php echo VtHelper::formatNumber($product['price']) ?></span>
+                                                        <span class="amount"> Liên hệ: <?php echo sfConfig::get("app_phone_number") ?></span>
                                                     </ins>
+                                                    <span class="amount"> </span>
                                                 </span>
-                                                <!-- .price -->
-                                                <h2 class="woocommerce-loop-product__title"><?php echo $product['name'] ?></h2>
+                                                </a>
+                                            <!-- .price -->
                                             </div>
                                             <!-- .media-body -->
                                         </div>
                                         <!-- .media -->
-                                    </a>
+                                    </div>
                                     <!-- .woocommerce-LoopProduct-link -->
                                 </div>
                             <?php endforeach; ?>

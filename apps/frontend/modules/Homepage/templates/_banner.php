@@ -2,7 +2,7 @@
   <div class="slider">
     <div class="home-v3-slider home-slider">
       <div class="slider-1">
-        <img src="/assets/images/slider/home-v3-img-1.png" alt="">
+        <img src="<?php echo sfConfig::get("app_domain_web_root")?>/assets/images/slider/home-v3-img-1.png" alt="">
         <div class="caption">
           <div class="title">The new-tech gift you are wishing for
             <br>is right here</div>
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="slider-1 slider-2">
-        <img src="/assets/images/slider/home-v1-img-2.png" alt="">
+        <img src="<?php echo sfConfig::get("app_domain_web_root")?>/assets/images/slider/home-v1-img-2.png" alt="">
         <div class="caption">
           <div class="title">The new-tech gift you are wishing for
             <br>is right here</div>

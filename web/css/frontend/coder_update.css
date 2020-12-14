@@ -48,3 +48,6 @@ table.cart thead th{
 .footer-contact a{
     color: #fff !important;
 }
+.site-footer .before-footer-wrap{
+    padding-top: 1em
+}

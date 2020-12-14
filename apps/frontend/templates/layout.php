@@ -4,7 +4,7 @@
     <?php include_http_metas() ?>
     <?php include_title() ?>
 
-    <link rel="shortcut icon" href="/uploads/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="<?php echo sfConfig::get("app_domain_web_root")?>/uploads/images/favicon/favicon.ico" />
     <meta name="charset" content="utf-8" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
     <link rel="alternate" href="<?php echo url_for('homepage', array(), true)?>" hreflang="vi-vn" />
 
     <?php include_stylesheets() ?>
-    <link href="/css/frontend/coder_update.css?v=1.7" media="all" type="text/css" rel="stylesheet"/>
+    <link href="<?php echo sfConfig::get("app_domain_web_root")?>/css/frontend/coder_update.css?v=1.7" media="all" type="text/css" rel="stylesheet"/>
   </head>
   <body class="<?php echo get_slot('body_class') ?>">
     <div id="page" class="hfeed site">
@@ -23,7 +23,6 @@
       <?php include_partial('Common/footer')?>
     </div>
     <?php include_javascripts() ?>
-    <script type="text/javascript" src="/js/frontend/cart.js?v=1.2"></script>
-    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="<?php echo sfConfig::get("app_domain_web_root")?>/js/custom.js"></script>
   </body>
 </html>
