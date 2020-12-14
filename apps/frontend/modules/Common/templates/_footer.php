@@ -40,7 +40,7 @@
                 <div class="footer-contact">
                     <div class="contact-payment-wrap">
                         <div>
-                            <div class="media-title">tech market</div>
+                            <div class="media-title">Thiết bị cờ bạc bịp</div>
                             <div class="is-divider small"></div>
                             <div class="media">
                                 <div class="media-body">
@@ -90,7 +90,7 @@
         <!-- .footer-widgets-block -->
         <div class="site-info">
             <div class="col-full">
-                <div class="copyright">Copyright &copy; 2017 <a href="home-v1.html">Techmarket</a> Theme. All rights reserved.</div>
+                <div class="copyright">Copyright &copy; 2017 <a href="/">Thiết bị cờ bạc bịp</a> Theme. All rights reserved.</div>
                 <!-- .copyright -->
                 <div class="credit">Made with
                     <i class="fa fa-heart"></i> by bcube.</div>

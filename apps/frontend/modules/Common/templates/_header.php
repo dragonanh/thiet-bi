@@ -4,7 +4,7 @@
         <div class="row">
             <div class="site-branding">
                 <a href="<?php echo url_for('@homepage') ?>" class="custom-logo-link" rel="home">
-                    TechMarket
+                    <img src="<?php echo sfConfig::get("app_domain_web_root")?>/images/logo.png">
                 </a>
                 <!-- /.custom-logo-link -->
             </div>
@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="site-branding">
                     <a href="<?php echo url_for('@homepage') ?>" class="custom-logo-link" rel="home">
-                        TechMarket
+                        <img src="<?php echo sfConfig::get("app_domain_web_root")?>/images/logo.png">
                     </a>
                     <!-- /.custom-logo-link -->
                 </div>
